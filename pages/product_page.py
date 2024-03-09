@@ -1,6 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
-from selenium.webdriver.support import expected_conditions as EC
+from .locators import BasketPageLocators
 
 class ProductPage(BasePage):
     def add_item_to_basket(self):
@@ -32,10 +32,14 @@ class ProductPage(BasePage):
     
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.WHOLE_SUCCESS_MESSAGE), \
-           "Success message is presented, but should not be"
+           "Сообщение об успехе ошибочно появляется"
     
     def should_disappear_success_message(self):
         assert self.is_disappeared(*ProductPageLocators.WHOLE_SUCCESS_MESSAGE)
-        "Success message is not presented, but should be"
+        "Сообщение об успехе не появляется, хотя должно"
+
+    def add_to_basket_button(self):
+         assert self.is_element_present(*BasketPageLocators. BASKET_PAGE_BUTTON)
+    
         
     
