@@ -19,4 +19,7 @@ class ProductPageLocators():
     PRICE_AFTER_ADD_ITEM = (By.CSS_SELECTOR,".alert-info .alertinner strong")
     WHOLE_SUCCESS_MESSAGE = (By.CSS_SELECTOR,".alert-safe.alert-noicon")
 
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
 
